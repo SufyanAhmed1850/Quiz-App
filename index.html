@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <p class="quiz-name selectAndHighlight">JavaScript Quiz</p>
+        <header class="header-container selectAndHighlight">
+            <p class="name">Sufyan Ahmed</p>
+            <p class="counter"><span id="headerCounter"></span> | <span id="headerContainerTotal"></span></p>
+            <p class="timer" id="headerTimer"><span>00</span>:<span>00</span></p>
+        </header>
+        <section class="question-container">
+            <p class="question selectAndHighlight" id="question">What is the result of the following expression: 5 + 3?
+            </p>
+            <div class="options selectAndHighlight" id="options">
+                <p>7</p>
+                <p>8</p>
+                <p>15</p>
+                <p>53</p>
+            </div>
+            <button class="nextQuesBtn selectAndHighlight" onclick="setQuestion()" id="nextQuesBtn">NEXT</button>
+            <button class="submitQuesBtn selectAndHighlight" onclick="showResult()" id="submitQuesBtn">SUBMIT</button>
+        </section>
+        <section class="question-container result-container selectAndHighlight" id="result-container">
+            <div class="result-div">
+                <h1 id="resultTitle"></h1>
+                <div class="result-questions-quantity">
+                    <p>Total Questions</p>
+                    <p id="totalQues"></p>
+                </div>
+                <div class="result-questions-quantity">
+                    <p>Correct Questions</p>
+                    <p id="correctQues"></p>
+                </div>
+            </div>
+            <div class="circular-progress" data-inner-circle-color="#24232C" data-progress-color="#A4FFAF"
+                data-bg-color="#F8F8F8">
+                <div class="inner-circle"></div>
+                <p class="percentage"></p>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="app.js"></script>
+
+</html>
