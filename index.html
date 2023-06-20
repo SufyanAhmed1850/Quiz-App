@@ -9,14 +9,43 @@
 </head>
 
 <body>
-    <main class="container">
-        <p class="quiz-name selectAndHighlight">JavaScript Quiz</p>
+    <main class="container" id="formPage">
+        <section class="form  selectAndHighlight">
+            <h1>Quiz Form</h1>
+            <input oninput="handleBorder(this)" onblur="handleBorder(this)" id="firstName" type="text"
+                placeholder="First name" autocomplete="off" spellcheck="false">
+            <input oninput="handleBorder(this)" onblur="handleBorder(this)" id="lastName" type="text"
+                placeholder="Last name" autocomplete="off" spellcheck="false">
+            <div class="dropdown">
+                <button class="dropbtn" id="quizName" onclick="toggleDropDown()">Select
+                    Quiz</button>
+                <div id="dropDownContent" class="dropdown-content">
+                    <p onclick="setArr('html'); toggleDropDown()">HTML</p>
+                    <p onclick="setArr('css'); toggleDropDown()">CSS</p>
+                    <p onclick="setArr('js'); toggleDropDown()">JavaScript</p>
+                </div>
+            </div>
+            <button class="form-next" onclick="startQuiz()">START</button>
+        </section>
+        <section class="form">
+            <div class="remember">
+                <ul>
+                    <li><span id="numOfQues">00</span> Questions are given in <span id="nameOfQuiz"></span> Quiz.</li>
+                    <li>Option once selected cannot be changed.</li>
+                    <li>10 minutes are given, then quiz will end automatically.</li>
+                    <li>Scoring below 70% means you did not pass.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <main class="container" id="questionPage">
+        <p class="quiz-name selectAndHighlight"><span id="quizNameHead">JavaScript</span> Quiz</p>
         <header class="header-container selectAndHighlight">
-            <p class="name">Sufyan Ahmed</p>
+            <p class="name" id="headerName">Sufyan Ahmed</p>
             <p class="counter"><span id="headerCounter"></span> | <span id="headerContainerTotal"></span></p>
             <p class="timer" id="headerTimer"><span>00</span>:<span>00</span></p>
         </header>
-        <section class="question-container">
+        <section class="question-container quesContainerNoneGsap">
             <p class="question selectAndHighlight" id="question">What is the result of the following expression: 5 + 3?
             </p>
             <div class="options selectAndHighlight" id="options">
@@ -28,6 +57,8 @@
             <button class="nextQuesBtn selectAndHighlight" onclick="setQuestion()" id="nextQuesBtn">NEXT</button>
             <button class="submitQuesBtn selectAndHighlight" onclick="showResult()" id="submitQuesBtn">SUBMIT</button>
         </section>
+    </main>
+    <main class="container" id="resultPage">
         <section class="question-container result-container selectAndHighlight" id="result-container">
             <div class="result-div">
                 <h1 id="resultTitle"></h1>
@@ -45,10 +76,11 @@
                 <div class="inner-circle"></div>
                 <p class="percentage"></p>
             </div>
+            <button class="toHomeBtn selectAndHighlight" onclick="loadPage()">BACK TO HOME</button>
         </section>
     </main>
 </body>
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
 <script src="app.js"></script>
 
 </html>

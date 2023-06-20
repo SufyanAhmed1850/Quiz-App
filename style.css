@@ -12,10 +12,145 @@ body {
     background-color: #18171F;
 }
 
+#formPage {
+    height: 100vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#questionPage {
+    display: none;
+}
+
+#resultPage {
+    display: none;
+}
+
 .selectAndHighlight {
     user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+.form {
+    width: 95%;
+    max-width: 600px;
+    background-color: #24232C;
+    border-radius: 16px;
+    padding: 24px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.form h1 {
+    font-size: 36px;
+    width: fit-content;
+    line-height: 1;
+    margin: 4px 0 10px 0;
+}
+
+.form input {
+    width: 95%;
+    max-width: 350px;
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #24232C;
+    border-radius: 10px;
+    border: 1px solid #8e8e8e;
+    outline: none;
+}
+
+.form-next {
+    background-color: #8afd98;
+    color: #18171F;
+    border: none;
+    outline: none;
+    padding: 13.5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 95%;
+    max-width: 350px;
+    font-weight: 600;
+}
+
+.form-next:active {
+    background-color: #A4FFAF;
+}
+
+.remember {
+    width: 95%;
+}
+
+.remember h1 {
+    margin-bottom: 16px;
+}
+
+.remember li,
+.remember li span {
+    list-style-position: inside;
+    color: #bababa;
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: #24232C;
+    color: #E6E5EA;
+    padding: 10px 20px;
+    border: 1px solid #8e8e8e;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    outline: none;
+    width: 100%;
+    max-width: 350px;
+    text-align: left;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    margin-top: 10px;
+    display: none;
+    position: absolute;
+    background-color: #24232C;
+    outline: 1px solid #8e8e8e;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content p {
+    color: #E6E5EA;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content p:hover {
+    color: #8e8e8e;
+}
+
+.dropbtn {
+    font-size: 18px;
+}
+
+.dropdown-content p {
+    font-size: 18px;
 }
 
 .quiz-name {
@@ -23,14 +158,14 @@ body {
     width: 95%;
     max-width: 1000px;
     border-bottom: 1px solid #e6e5ea76;
-    margin-bottom: 16px;
+    margin: 16px;
 }
 
 .container {
-    margin-top: 48px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 24px;
 }
 
@@ -42,17 +177,20 @@ body {
     align-items: center;
     background-color: #24232C;
     border-radius: 16px;
-    padding: 24px;
+    padding: 20px;
 }
-.header-container p{
+
+.header-container p {
     flex: 1;
 }
-.counter{
+
+.counter {
     text-align: center;
     font-weight: 600;
     font-size: 18px;
 }
-.timer{
+
+.timer {
     text-align: end;
 }
 
@@ -61,10 +199,10 @@ body {
     max-width: 768px;
     background-color: #24232C;
     border-radius: 16px;
-    padding: 24px;
+    padding: 20px 24px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
 }
 
 .question {
@@ -75,7 +213,7 @@ body {
 .options {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
 }
 
 .options p {
@@ -114,6 +252,7 @@ body {
 
 .wrongAns {
     background-color: #D9183B !important;
+    color: #E6E5EA !important;
 }
 
 .submitQuesBtn {
@@ -122,7 +261,7 @@ body {
     color: #18171F;
     border: none;
     outline: none;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
     width: max-content;
@@ -130,11 +269,24 @@ body {
     font-weight: 600;
 }
 
+.toHomeBtn {
+    background-color: #8afd98;
+    color: #18171F;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: max-content;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
 .result-container {
-    display: none;
+    margin-top: 16px;
     justify-content: center;
     align-items: center;
-    padding-bottom: 36px;
+    padding-bottom: 24px;
 }
 
 .result-container h1 {
