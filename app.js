@@ -993,7 +993,9 @@ const setArr = (arr) => {
 
 const startQuiz = () => {
     let firstNameRaw = document.getElementById("firstName");
+    let firstNameRawValue = firstNameRaw.value
     let lastNameRaw = document.getElementById("lastName");
+    let lastNameRawValue = lastNameRaw.value
     let quizName = document.getElementById("quizName");
     if (!firstNameRaw.value) {
         firstNameRaw.style.border = "1px solid #D9183B";
@@ -1011,16 +1013,16 @@ const startQuiz = () => {
     ) {
         return;
     }
-    for (var i = 0; i < firstNameRaw.length; i++) {
+    for (var i = 0; i < firstNameRawValue.length; i++) {
         i === 0
-            ? firstName.push(firstNameRaw[i].toUpperCase())
-            : firstName.push(firstNameRaw[i].toLowerCase());
+            ? firstName.push(firstNameRawValue[i].toUpperCase())
+            : firstName.push(firstNameRawValue[i].toLowerCase());
     }
     firstName = firstName.join("");
-    for (var i = 0; i < lastNameRaw.length; i++) {
+    for (var i = 0; i < lastNameRawValue.length; i++) {
         i === 0
-            ? lastName.push(lastNameRaw[i].toUpperCase())
-            : lastName.push(lastNameRaw[i].toLowerCase());
+            ? lastName.push(lastNameRawValue[i].toUpperCase())
+            : lastName.push(lastNameRawValue[i].toLowerCase());
     }
     lastName = lastName.join("");
     userName = firstName + " " + lastName;
